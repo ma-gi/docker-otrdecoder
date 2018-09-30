@@ -1,4 +1,4 @@
-#Quick Start - Dockerized `otrdecoder` from onlinetvrecorder.com
+# Quick Start - Dockerized `otrdecoder` from onlinetvrecorder.com
 
 A minimal Docker image for otrdecoder (onlinetvrecorder.com) based on Alpine Linux.
 An easy to use container with less than 13 MB of size.
