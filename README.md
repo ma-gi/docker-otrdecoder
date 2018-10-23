@@ -1,18 +1,13 @@
-# Dockerized `otrdecoder` from onlinetvrecorder.com
+# Docker image for otrdecoder
 
-A minimal Docker image for `otrdecoder` (onlinetvrecorder.com) based on Alpine Linux.
-An easy to use container with less than 11 MB of size.
+[![](https://images.microbadger.com/badges/image/mgilbert/otrdecoder.svg)](https://microbadger.com/images/mgilbert/otrdecoder "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/mgilbert/otrdecoder.svg)](https://microbadger.com/images/mgilbert/otrdecoder "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/commit/mgilbert/otrdecoder.svg)](https://microbadger.com/images/mgilbert/otrdecoder "Get your own commit badge on microbadger.com")
 
-[![](https://images.microbadger.com/badges/image/mgilbert/otrdecoder.svg)](https://microbadger.com/images/mgilbert/otrdecoder "Get your own image badge on microbadger.com")
-[![](https://images.microbadger.com/badges/version/mgilbert/otrdecoder.svg)](https://microbadger.com/images/mgilbert/otrdecoder "Get your own version badge on microbadger.com")
+A minimal and easy to use Docker image for otrdecoder with less than 11 MB of size.
 
-## Pull the container
+Please use it to decode video recordings you have made at [onlinetvrecorder.com](https://www.onlinetvrecorder.com/)
 
-```bash
-docker pull mgilbert/otrdecoder
-```
 
-## Use it with mounted folder for otrkey files
+### Use it with mounted folder for otrkey files
 
 ```bash
 # specify custom directory for otrkey files
@@ -22,7 +17,9 @@ docker container run --rm --user="$(id -u):$(id -g)" -v /your/path/to/otrkeyfile
 docker container run --rm --user="$(id -u):$(id -g)" -v "$(pwd)":/mnt mgilbert/otrdecoder [-i FILE -e EMAIL -p PASSWORD]
 ```
 
-## Use it with my `docker-otrdecoder.sh` Bash Script
+### Use it with my `docker-otrdecoder.sh` Bash Script
+
+#### Install
 
 First you have to install it for example in your personal `~/bin/` directory
 
@@ -31,18 +28,21 @@ wget -O ~/bin/docker-otrdecoder.sh https://raw.githubusercontent.com/ma-gi/docke
 chmod a+x ~/bin/docker-otrdecoder.sh
 ```
 
-now start using it wherever you need it
+#### Now start using it wherever you need it
+
+call it providing your email an password as arguments
 
 ```bash
-# call it providing your email an password as arguments
 docker-otrdecoder.sh -e 'email@example.com' -p 'my#super!secret' *.otrkey
+```
 
-# if your email and password settings are specified in your ~/.docker-otrdecoderrc file
+if your email and password settings are specified in your ~/.docker-otrdecoderrc file
+
+```bash
 docker-otrdecoder.sh *.otrkey
 ```
 
-
-## If you like, take a look into the container
+### If you like, take a look into the container
 
 ```bash
 docker container run --rm -it --entrypoint="sh" mgilbert/otrdecoder
