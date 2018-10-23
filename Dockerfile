@@ -1,6 +1,15 @@
 FROM alpine:3.8
 
-LABEL maintainer="Marco Gilbert <marco.gilbert@gmail.com>"
+ARG BUILD_DATE
+ARG VCS_REF
+
+LABEL maintainer="Marco Gilbert <marco.gilbert@gmail.com>" \
+    org.label-schema.build-date="${BUILD_DATE}" \
+    org.label-schema.name="Docker image for otrdecoder" \
+    org.label-schema.description="A minimal and easy to use Docker image for otrdecoder with less than 11 MB of size." \
+    org.label-schema.vcs-url="https://github.com/ma-gi/docker-otrdecoder" \
+    org.label-schema.vcs-ref="${VCS_REF}" \
+    org.label-schema.schema-version="1.0"
 
 # Install required tools and libraries
 RUN wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub \
