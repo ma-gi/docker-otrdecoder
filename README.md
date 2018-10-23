@@ -17,15 +17,15 @@ docker container run --rm --user="$(id -u):$(id -g)" -v /your/path/to/otrkeyfile
 docker container run --rm --user="$(id -u):$(id -g)" -v "$(pwd)":/mnt mgilbert/otrdecoder [-i FILE -e EMAIL -p PASSWORD]
 ```
 
-### Use it with my `docker-otrdecoder.sh` Bash Script
+### Use it with my `otrdecoder-docker.sh` Bash Script
 
 #### Install
 
 First you have to install it for example in your personal `~/bin/` directory
 
 ```bash
-wget -O ~/bin/docker-otrdecoder.sh https://raw.githubusercontent.com/ma-gi/docker-otrdecoder/master/docker-otrdecoder.sh
-chmod a+x ~/bin/docker-otrdecoder.sh
+wget -O ~/bin/otrdecoder-docker.sh https://raw.githubusercontent.com/ma-gi/docker-otrdecoder/master/otrdecoder-docker.sh
+chmod a+x ~/bin/otrdecoder-docker.sh
 ```
 
 #### Now start using it wherever you need it
@@ -33,13 +33,13 @@ chmod a+x ~/bin/docker-otrdecoder.sh
 call it providing your email an password as arguments
 
 ```bash
-docker-otrdecoder.sh -e 'email@example.com' -p 'my#super!secret' *.otrkey
+otrdecoder-docker.sh -e 'email@example.com' -p 'my#super!secret' *.otrkey
 ```
 
 if your email and password settings are specified in your ~/.docker-otrdecoderrc file
 
 ```bash
-docker-otrdecoder.sh *.otrkey
+otrdecoder-docker.sh *.otrkey
 ```
 
 ### If you like, take a look into the container
