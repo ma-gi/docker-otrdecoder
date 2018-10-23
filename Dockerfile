@@ -11,6 +11,7 @@ RUN wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/s
 
 # Set the working directory to /mnt
 WORKDIR /mnt
+VOLUME /mnt
 
 ENTRYPOINT ["otrdecoder"]
 CMD ["-v"]
